@@ -32,31 +32,31 @@ angular.module('tictactoeApp').controller('MainCtrl', function($scope, current, 
 				}
 			}
 			
-			for(var i = 0; i < dimension; i++) {//check row
-				if($scope.squares[i][row].value !== current) {
+			for(var j = 0; j < dimension; j++) {//check row
+				if($scope.squares[j][row].value !== current) {
 					break;
 				}
-				if(i === (dimension - 1)) {
+				if(j === (dimension - 1)) {
 					$scope.outcome = ['WIN FOR', current].join(' ');
 				}
 			}
 			
 			if(column === row) { // on diagonal
-				for(var i = 0; i < dimension; i++) {
-					if($scope.squares[i][i].value !== current) {
+				for(var k = 0; k < dimension; k++) {
+					if($scope.squares[k][k].value !== current) {
 						break;
 					}
-					if(i === (dimension - 1)) {
+					if(k === (dimension - 1)) {
 						$scope.outcome = ['WIN FOR', current].join(' ');
 					}
 				}
 			}
 			
-			for(var i = 0; i < dimension; i++) {//check reverse diagonal
-				if($scope.squares[i][(dimension - 1) - i].value !== current) {
+			for(var m = 0; m < dimension; m++) {//check reverse diagonal
+				if($scope.squares[m][(dimension - 1) - m].value !== current) {
 					break;
 				}
-				if(i === (dimension - 1)) {
+				if(m === (dimension - 1)) {
 					$scope.outcome = ['WIN FOR', current].join(' ');
 				}
 			}
@@ -77,6 +77,6 @@ angular.module('tictactoeApp').controller('MainCtrl', function($scope, current, 
 		}
 		
 		$scope.outcome = '';
-	}
+	};
 
 });
