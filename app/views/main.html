@@ -1,0 +1,11 @@
+<div class="alert alert-info" ng-show="outcome">{{outcome}}</div>
+<p>
+	<button class="btn btn-default btn-lg" ng-click="reset()">Reset</button>
+</p>
+<table class="table table-bordered text-center game-table">
+	<tbody>
+		<tr data-ng-repeat="col in squares">
+			<td data-ng-repeat="row in col" ng-click="select($parent.$index, $index)">{{row.value}}</td>
+		</tr>
+	</tbody>
+</table>
